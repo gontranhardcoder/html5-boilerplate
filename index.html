@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  BOILERPLATE HTML5 — Point de départ pour tout projet HTML / CSS
+  ==========================================================================
+  Ce fichier est un squelette complet, commenté et prêt à l'emploi.
+  Chaque section est expliquée pour que tu puisses la personnaliser.
+
+  MODE D'EMPLOI :
+  1. Remplace le contenu d'exemple par le tien.
+  2. Adapte les métadonnées SEO (title, description, Open Graph, Twitter…).
+  3. Ajoute tes styles dans css/style.css.
+  4. Ajoute ton JavaScript dans js/main.js.
+  5. Remplace les URLs d'exemple (canonical, og:url, og:image…) par les tiennes.
+
+  À NE PAS OUBLIER :
+  - L'attribut "lang" de la balise <html> (fr, en, es, de…)
+  - Le nom du site et les descriptions (elles doivent être uniques par page)
+  - Les images de partage (og:image / twitter:image) : 1200×630 px recommandé
+  ==========================================================================
+-->
+
+<!-- "lang" définit la langue principale de la page (utile pour le SEO et l'accessibilité) -->
+<html lang="fr">
+
+<head>
+  <!-- ===================================================
+       1. ENCODAGE & COMPATIBILITÉ
+  ==================================================== -->
+  <!-- Définit l'encodage des caractères (accents, emojis, symboles…). Toujours en premier. -->
+  <meta charset="UTF-8" />
+
+  <!-- Rend la page responsive (adaptée aux mobiles et tablettes). Indispensable. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Force Internet Explorer / Edge à utiliser le moteur de rendu le plus récent. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ===================================================
+       2. MÉTADONNÉES SEO DE BASE
+  ==================================================== -->
+  <!-- Titre de la page : 50 à 60 caractères conseillés. Visible dans l'onglet et dans Google. -->
+  <title>Mon Site — Titre de la page d'accueil</title>
+
+  <!-- Description : 150 à 160 caractères. C'est le texte affiché sous le titre dans Google. -->
+  <meta name="description" content="Description claire et accrocheuse de ta page, en 150 à 160 caractères maximum, qui donne envie de cliquer." />
+
+  <!-- Auteur du site / de la page -->
+  <meta name="author" content="Ton Nom" />
+
+  <!-- Mots-clés : quasi ignorés par Google aujourd'hui, mais sans danger de les laisser. -->
+  <meta name="keywords" content="html, css, boilerplate, template, seo, site web" />
+
+  <!-- Indique aux moteurs de recherche comment indexer la page.
+       "index, follow"  = autoriser l'indexation ET suivre les liens (comportement normal).
+       "noindex, nofollow" = ne pas indexer (utile pour les pages privées/en construction). -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- ===================================================
+       3. URL CANONIQUE
+  ==================================================== -->
+  <!-- Indique l'URL "officielle" de la page. Évite les problèmes de contenu dupliqué. -->
+  <link rel="canonical" href="https://www.monsite.com/" />
+
+  <!-- ===================================================
+       4. OPEN GRAPH — partage Facebook, LinkedIn, WhatsApp, etc.
+  ==================================================== -->
+  <!-- Type de contenu : "website" pour une page, "article" pour un article de blog. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mon Site — Titre de la page d'accueil" />
+  <meta property="og:description" content="Description affichée lors du partage sur les réseaux sociaux." />
+  <meta property="og:url" content="https://www.monsite.com/" />
+  <!-- Image de partage : idéalement 1200×630 px, taille < 8 Mo -->
+  <meta property="og:image" content="https://www.monsite.com/assets/og-image.jpg" />
+  <meta property="og:site_name" content="Mon Site" />
+  <!-- Langue et région du contenu -->
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- ===================================================
+       5. TWITTER / X CARD — partage sur Twitter
+  ==================================================== -->
+  <!-- "summary_large_image" = grande image en tête de tweet ; "summary" = petite image. -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mon Site — Titre de la page d'accueil" />
+  <meta name="twitter:description" content="Description affichée dans le tweet." />
+  <meta name="twitter:image" content="https://www.monsite.com/assets/og-image.jpg" />
+  <!-- Facultatif : le compte Twitter/X associé au site -->
+  <!-- <meta name="twitter:site" content="@toncompte" /> -->
+
+  <!-- ===================================================
+       6. COULEUR DU THÈME (mobile)
+  ==================================================== -->
+  <!-- Colore la barre d'adresse du navigateur mobile aux couleurs de ta marque. -->
+  <meta name="theme-color" content="#6366f1" />
+
+  <!-- ===================================================
+       7. FAVICON & ICÔNES
+  ==================================================== -->
+  <!-- Icône affichée dans l'onglet du navigateur (format SVG, moderne) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <!-- Icône pour les écrans d'accueil iOS/Android (ajoute un fichier .png si besoin) -->
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- ===================================================
+       8. DONNÉES STRUCTURÉES JSON-LD (SEO avancé)
+  ==================================================== -->
+  <!-- Permet à Google de mieux comprendre ton site (rich snippets, logo, etc.).
+       Adapte le @type selon le contenu : WebSite, Organization, Article, Product… -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Mon Site",
+      "url": "https://www.monsite.com/",
+      "description": "Description générale du site pour les moteurs de recherche."
+    }
+  </script>
+
+  <!-- ===================================================
+       9. FEUILLE DE STYLE PRINCIPALE
+  ==================================================== -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ===================================================
+       EN-TÊTE DE PAGE (navigation principale)
+  ==================================================== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <!-- Logo / nom du site : lien vers la page d'accueil -->
+      <a href="/" class="nav__logo">Mon Site</a>
+
+      <!-- Menu de navigation -->
+      <ul class="nav__list">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===================================================
+       CONTENU PRINCIPAL
+  ==================================================== -->
+  <main class="main">
+    <!-- Chaque grande partie du contenu dans une <section> (ou <article>) -->
+    <section id="accueil" class="section">
+      <!-- Un seul <h1> par page : c'est le titre principal (important pour le SEO) -->
+      <h1>Bienvenue sur Mon Site</h1>
+      <p>
+        Ceci est un modèle de page. Remplace ce contenu par le tien et
+        commence à construire ton site web.
+      </p>
+      <a href="#contact" class="button">Me contacter</a>
+    </section>
+
+    <section id="a-propos" class="section">
+      <h2>À propos</h2>
+      <p>Présente-toi ou décris ton projet ici.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Ajoute ici ton formulaire ou tes coordonnées.</p>
+    </section>
+  </main>
+
+  <!-- ===================================================
+       PIED DE PAGE
+  ==================================================== -->
+  <footer class="site-footer">
+    <!-- L'année est mise à jour automatiquement par js/main.js -->
+    <p>&copy; <span id="year">2026</span> Mon Site. Tous droits réservés.</p>
+  </footer>
+
+  <!-- ===================================================
+       SCRIPT JAVASCRIPT
+  ==================================================== -->
+  <!-- L'attribut "defer" charge le script après le HTML, sans bloquer le rendu. -->
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>

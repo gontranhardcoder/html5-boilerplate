@@ -1,0 +1,235 @@
+/* ==========================================================================
+   STYLE.CSS — Feuille de style de base du boilerplate
+   ==========================================================================
+   Organisée en sections :
+   1. Variables CSS (couleurs, espacements, polices)
+   2. Reset / normalisation
+   3. Styles de base (typographie, liens, images)
+   4. Layout (header, nav, main, footer)
+   5. Composants (boutons, sections)
+   6. Utilitaires (helpers)
+
+   Personnalise les variables au début pour changer tout le thème d'un coup.
+   ========================================================================== */
+
+/* ===================================================
+   1. VARIABLES CSS (le "thème" du site)
+   ==================================================== */
+:root {
+  /* Couleurs */
+  --color-primary: #6366f1;        /* couleur principale (indigo) */
+  --color-primary-dark: #4f46e5;   /* variante plus foncée (survol) */
+  --color-bg: #ffffff;             /* fond de la page */
+  --color-surface: #f8fafc;        /* fond des zones en retrait */
+  --color-text: #1e293b;           /* texte principal */
+  --color-text-muted: #64748b;     /* texte secondaire / gris */
+  --color-border: #e2e8f0;         /* bordures */
+
+  /* Espacements */
+  --space-xs: 0.25rem;   /* 4px  */
+  --space-sm: 0.5rem;    /* 8px  */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 4rem;      /* 64px */
+
+  /* Rayons d'arrondi */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* Polices */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Largeur maximale du contenu (pour un site lisible sur grand écran) */
+  --container-max: 1100px;
+}
+
+/* ===================================================
+   2. RESET / NORMALISATION
+   ==================================================== */
+/* Réinitialise les marges/paddings par défaut des navigateurs */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* inclut le padding/border dans la largeur */
+  margin: 0;
+  padding: 0;
+}
+
+/* Les images ne débordent jamais de leur conteneur */
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===================================================
+   3. STYLES DE BASE
+   ==================================================== */
+html {
+  scroll-behavior: smooth; /* défilement fluide vers les ancres */
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;         /* interligne confortable */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Titres */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Paragraphes */
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* Liens */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* ===================================================
+   4. LAYOUT (header, nav, main, footer)
+   ==================================================== */
+
+/* --- En-tête --- */
+.site-header {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* --- Navigation --- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin: 0 auto; /* centre le contenu */
+}
+
+.nav__logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none; /* retire les puces de la liste */
+}
+
+.nav__list a {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.nav__list a:hover {
+  color: var(--color-primary);
+}
+
+/* --- Contenu principal --- */
+.main {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+/* --- Sections --- */
+.section {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+/* --- Pied de page --- */
+.site-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+/* ===================================================
+   5. COMPOSANTS
+   ==================================================== */
+
+/* Bouton principal */
+.button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ===================================================
+   6. UTILITAIRES
+   ==================================================== */
+
+/* Centrer du texte */
+.text-center { text-align: center; }
+
+/* Masquer un élément visuellement mais le garder pour les lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===================================================
+   RESPONSIVE — petits écrans (mobile)
+   ==================================================== */
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+
+  /* La navigation passe en colonne sur mobile */
+  .nav {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

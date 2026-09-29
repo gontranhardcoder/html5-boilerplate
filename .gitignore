@@ -1,0 +1,17 @@
+# ============================================================
+# .gitignore — Fichiers à ne pas versionner
+# ============================================================
+
+# macOS
+.DS_Store
+
+# Éditeurs / IDE
+.vscode/
+.idea/
+
+# Fichiers temporaires
+*.log
+*.tmp
+
+# Node.js (si tu ajoutes des outils de build plus tard)
+node_modules/
